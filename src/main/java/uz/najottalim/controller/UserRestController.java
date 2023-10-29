@@ -6,6 +6,8 @@ import org.springframework.web.bind.annotation.*;
 import uz.najottalim.entity.User;
 import uz.najottalim.service.UserService;
 
+import java.util.List;
+
 
 @RestController
 @RequestMapping("/users")
@@ -28,6 +30,12 @@ public class UserRestController {
     public ResponseEntity<User> delete(@PathVariable Long id) {
         userService.delete(id);
         return new ResponseEntity<>(HttpStatus.ACCEPTED);
+    }
+
+
+    @GetMapping("/findAll")
+    public List<User> getAll() {
+        return userService.getAll();
     }
 
 
