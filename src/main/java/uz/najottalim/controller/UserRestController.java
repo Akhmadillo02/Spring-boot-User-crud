@@ -46,6 +46,12 @@ public class UserRestController {
         return ResponseEntity.ok(save);
     }
 
+    @PutMapping("/update")
+    public ResponseEntity<User> update(@RequestBody User user) {
+        User update = userService.save(user);
+        return ResponseEntity.ok(update);
+    }
+
 
 
 
