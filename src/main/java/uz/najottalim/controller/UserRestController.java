@@ -40,6 +40,14 @@ public class UserRestController {
 
 
 
+    @PostMapping("/save")
+    public ResponseEntity<User> save( @RequestBody User user) {
+        User save = userService.save(user);
+        return ResponseEntity.ok(save);
+    }
+
+
+
 
 
 
